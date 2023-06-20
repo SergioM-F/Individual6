@@ -6,4 +6,5 @@
     <string name="e_mail">E-mail</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="password">Password</string>
+    <string name="imagen">imagen</string>
 </resources>
