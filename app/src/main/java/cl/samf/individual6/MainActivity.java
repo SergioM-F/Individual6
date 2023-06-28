@@ -9,15 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import cl.samf.individual6.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        EditText nombre;
+
+
+        /*EditText nombre;
         EditText apellido;
         EditText correo;
         EditText clave;
@@ -26,15 +33,15 @@ public class MainActivity extends AppCompatActivity {
         apellido = findViewById(R.id.textApellido);
         correo = findViewById(R.id.textMail);
         clave = findViewById(R.id.editTextTextPassword);
-        Button crearCuenta = findViewById(R.id.buttonCrearCuenta);
+        Button crearCuenta = findViewById(R.id.buttonCrearCuenta);*/
 
-        crearCuenta.setOnClickListener(new View.OnClickListener() {
+        binding.buttonCrearCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nom = nombre.getText().toString();
-                String apell = apellido.getText().toString();
-                String mail = correo.getText().toString();
-                String pass = clave.getText().toString();
+                String nom = binding.textNombre.getText().toString();
+                String apell = binding.textApellido.getText().toString();
+                String mail = binding.textMail.getText().toString();
+                String pass = binding.editTextTextPassword.getText().toString();
 
 
                 if (nom.isEmpty() || apell.isEmpty() || mail.isEmpty()
